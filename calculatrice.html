@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculatrice -</title>
+<meta name="description" content="Notre calculatrice est actuellement en cours de développement. Elle sera disponible très prochainement. Merci de votre patience.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preload" href="polices/inter-tight-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-courriel" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-agenda" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-analyse" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+  <symbol id="i-bouclier" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-sante" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+  <symbol id="i-hausse" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></symbol>
+  <symbol id="i-sablier" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol>
+  <symbol id="i-maison" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-boussole" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></symbol>
+  <symbol id="i-oeil" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-coeur" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-diplome" viewBox="0 0 24 24"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+  <symbol id="i-epingle" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-trophee" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-groupe" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-valise" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-avion" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-etoile" viewBox="0 0 24 24"><path d="M12 0c.7 6.4 5 10.9 12 12-7 1.1-11.3 5.6-12 12-.7-6.4-5-10.9-12-12C7 10.9 11.3 6.4 12 0Z"/></symbol>
+  <symbol id="i-guillemets" viewBox="0 0 22 16"><path d="M5.2 0h5.1L6.4 16H0zM16.9 0H22l-3.9 16h-6.4z"/></symbol>
+  <symbol id="i-coche" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-cadenas" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-cible" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-suivi" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-envoyer" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+  <symbol id="i-recherche" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><path d="m20.5 20.5-4.2-4.2"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5.5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V3c0 2.8 2.2 5 5 5"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.6-4.6A9 9 0 1 1 8 19.6Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.3-1.8-1-1 .8a4.3 4.3 0 0 1-2.2-2.2l.8-1-1-1.8Z"/></symbol>
+  <symbol id="i-calendrier" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-voiture" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18.4 10 16 6.5A2 2 0 0 0 14.3 5.5H9.7A2 2 0 0 0 8 6.5L5.6 10 3.5 11.1C2.7 11.3 2 12.1 2 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></symbol>
+  <symbol id="i-livre" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h8M8 11h6"/></symbol>
+  <symbol id="i-calculatrice" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2.5"/><path d="M8 6h8M16 14v4M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></symbol>
+  <symbol id="i-chantier" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6M14 6a6 6 0 0 1 6 6v3"/></symbol>
+  <symbol id="i-panier" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-couverts" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+  <symbol id="i-ampoule" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5A6 6 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></symbol>
+  <symbol id="i-etoile-contour" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+</svg>
+
+<header class="entete">
+  <div class="enveloppe">
+    <div class="pre-menu">
+      <ul class="pre-menu__liens"><li><a href="a-propos.html">A propos</a></li><li><a href="faq.html">FAQ</a></li></ul>
+      <button class="pre-menu__recherche" type="button" aria-expanded="false" aria-label="Rechercher"><svg class="ico" aria-hidden="true"><use href="#i-recherche"/></svg></button>
+      <div class="pre-menu__reseaux" aria-label="Réseaux sociaux"><a href="https://www.facebook.com/AdjouaLaetitiaKanon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a><a href="https://www.instagram.com/adjouak.lenordfinancier?igsh=MTJ1eDNjazNscWo3ZQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a><a href="https://www.linkedin.com/in/adjoua-laetitia-konan-b902b0b7" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a><a href="https://wa.me/16132624360" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a><a href="https://www.tiktok.com/@adjoua.lenordfinancier" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg></a></div>
+      <form class="recherche" role="search" action="index.html">
+        <label class="visuellement-cache" for="recherche-champ">Rechercher</label>
+        <input id="recherche-champ" type="search" name="s" placeholder="Rechercher sur le site…">
+        <button type="submit" aria-label="Lancer la recherche"><svg class="ico" aria-hidden="true"><use href="#i-recherche"/></svg></button>
+      </form>
+    </div>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="marque" href="index.html">
+        <span class="marque__pastille"><img src="img/embleme.png" alt="Le Nord Financier — accueil" width="176" height="166"></span>
+      </a>
+      <ul class="nav__liens">
+        <li><a href="index.html">Acceuil</a></li><li class="a-sous-menu"><a href="services-2.html">Services</a><button class="sous-menu__bascule" type="button" aria-expanded="false" aria-label="Sous-menu Services"><svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button><ul class="sous-menu"><li><a href="outils-financiers.html">Outils Financiers</a></li><li><a href="programme-de-recommandation.html">Programme de recommandation</a></li><li><a href="temoignagnes.html">Témoignagnes</a></li></ul></li><li class="a-sous-menu"><a href="centre-de-ressoucre.html">Centre de ressource</a><button class="sous-menu__bascule" type="button" aria-expanded="false" aria-label="Sous-menu Centre de ressource"><svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button><ul class="sous-menu"><li><a href="communaute.html">Communauté</a></li><li><a href="reseautage-2.html">Réseautage</a></li></ul></li><li class="a-sous-menu"><a href="evenements.html">Evènements</a><button class="sous-menu__bascule" type="button" aria-expanded="false" aria-label="Sous-menu Evènements"><svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button><ul class="sous-menu"><li><a href="galerie.html">Galerie</a></li></ul></li><li><a href="contact-2.html">Contact</a></li>
+      </ul>
+      <div class="nav__droite">
+        <button class="nav__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
+      <a class="nav__rdv" href="https://calendly.com/adjouakonan-lenordfinancier" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-calendrier"/></svg>Prendre un rendez-vous gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<!-- ================= EN-TÊTE DE PAGE ================= -->
+<section class="hero hero--compact">
+  <span class="repere repere--1"></span>
+  <div class="enveloppe">
+    <div class="hero__contenu">
+      <h1 class="hero__titre">Calculatrice</h1>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MESSAGE ================= -->
+<section class="bientot">
+  <div class="enveloppe">
+    <div class="bientot__carte">
+      <span class="bientot__icone"><svg class="ico" aria-hidden="true"><use href="#i-calculatrice"/></svg></span>
+      <h2>Notre calculatrice est actuellement en cours de développement. Elle sera disponible très prochainement. Merci de votre patience.</h2>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <div class="pied__haut">
+      <div>
+        <a class="pied__marque" href="index.html"><img src="img/logo.png" alt="Le Nord Financier — Cap sur vos rêves, ensemble" width="400" height="383"></a>
+        <div class="pied__reseaux"><a href="https://www.facebook.com/AdjouaLaetitiaKanon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a><a href="https://www.instagram.com/adjouak.lenordfinancier?igsh=MTJ1eDNjazNscWo3ZQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a><a href="https://www.linkedin.com/in/adjoua-laetitia-konan-b902b0b7" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a><a href="https://wa.me/16132624360" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a><a href="https://www.tiktok.com/@adjoua.lenordfinancier" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg></a></div>
+      </div>
+      <div class="pied__colonnes">
+        <div>
+          <h2 class="pied__titre">Contact</h2>
+          <ul class="pied__coord">
+            <li><a href="tel:+16132624360"><span class="puce"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg></span>+1 613 262 4360</a></li>
+            <li><a href="mailto:info@lenordfinancier.com"><span class="puce"><svg class="ico" aria-hidden="true"><use href="#i-courriel"/></svg></span>info@lenordfinancier.com</a></li>
+            <li><span class="puce"><svg class="ico" aria-hidden="true"><use href="#i-epingle"/></svg></span>Québec, Ontario, Canada</li>
+          </ul>
+        </div>
+        <div class="pied__services">
+          <h2 class="pied__titre">Nos Services</h2>
+          <ul><li><a href="services-2.html">Analyse financière personnelle</a></li><li><a href="services-2.html">Assurance vie, invalidité et maladies graves</a></li><li><a href="services-2.html">Assurance santé, dentaire et voyage</a></li><li><a href="services-2.html">Épargne et investissements</a></li><li><a href="services-2.html">Planification de la retraite et gestion du patrimoine</a></li><li><a href="services-2.html">Assurance habitation et automobile</a></li><li><a href="services-2.html">Accompagnement des nouveaux arrivants et des étudiants internationaux</a></li></ul>
+        </div>
+        <div>
+          <h2 class="pied__titre">Liens utiles</h2>
+          <ul><li><a href="a-propos.html">A propos</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="politique-de-confidentialite.html">Politique de confidentialité</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="pied__bas">
+      <span>Copyright © 2026 Le Nord Financier. Tous droits réservés.</span>
+      <a class="pied__haut-de-page" href="#contenu">Retour en haut <svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
